@@ -39,6 +39,7 @@
             padding: 1rem;
             position: sticky;
             top: 0;
+            z-index: 1000;
         }
 
         nav ul {
@@ -59,6 +60,39 @@
             color: #ff8533;
         }
 
+        /* New dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #ff6600;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #444;
+        }
+
+        /* Rest of the original styles */
         section {
             padding: 4rem 2rem;
             max-width: 1200px;
@@ -160,10 +194,18 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li class="dropdown">
+                <a href="#activities">My Activities</a>
+                <div class="dropdown-content">
+                    <a href="#pit2">PIT 2</a>
+                    <a href="#pit3">PIT 3</a>
+                </div>
+            </li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- Rest of the original content -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <p>I am a passionate IT student with a focus on web development and software engineering. Currently pursuing my degree in Information Technology, I am constantly learning and exploring new technologies to expand my skill set.</p>
