@@ -6,32 +6,28 @@
     <link rel="page" href="index.html">
     <link rel="stylesheet" href="hehe.css">
     <title>Course Portfolio</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        table { width: 80%; margin: auto; border-collapse: collapse; }
-        th, td { border: 1px solid black; padding: 10px; }
-        th { background-color: #f4f4f4; }
-    </style>
 </head>
 <body>
     <h2>My Courses</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Year Level</th>
-                <th>Semester</th>
-                <th>Code</th>
-                <th>Description</th>
-                <th>Credit</th>
-            </tr>
-        </thead>
-        <tbody id="#coursesTable"></tbody> 
-    </table>
+    <div id="tableContainer">
+        <table id="coursesTable">
+            <thead>
+                <tr>
+                    <th>Year Level</th>
+                    <th>Semester</th>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Credit</th>
+                </tr>
+            </thead>
+            <tbody id="coursesTableBody"></tbody> 
+        </table>
+    </div>
     <script>
         fetch('hoho.json')
             .then(response => response.json())
             .then(data => {
-                let tableBody = document.getElementById("#coursesTable");
+                let tableBody = document.getElementById("coursesTableBody");
                 data.courses.forEach(course => {
                     let row = `<tr>
                         <td>${course.year_level}</td>
