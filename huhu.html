@@ -31,17 +31,16 @@
         fetch('hoho.json')
             .then(response => response.json())
             .then(data => {
-                const tableBody = document.querySelector('#coursesTable tbody');
+                let tableBody = document.getElementById("courses-table");
                 data.courses.forEach(course => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
+                    let row = `<tr>
                         <td>${course.year_level}</td>
                         <td>${course.sem}</td>
                         <td>${course.code}</td>
                         <td>${course.description}</td>
                         <td>${course.credit}</td>
-                    `;
-                    tableBody.appendChild(row);
+                    </tr>`;
+                    tableBody.innerHTML += row;
                 });
             })
             .catch(error => console.error('Error fetching JSON:', error));
