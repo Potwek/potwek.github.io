@@ -5,22 +5,20 @@
     justify-content: center;
     margin-top: 20px;
 }
-
 /* Styling the table */
 #coursesTable {
     width: 85%;
     border-collapse: collapse;
-    background: linear-gradient(135deg, #991b1b, #7f1d1d);
+    background: #1a1a1a;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     color: white;
     border-radius: 10px;
     overflow: hidden;
     font-family: 'Arial', sans-serif;
 }
-
 /* Table headers */
 #coursesTable th {
-    background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    background: #ff6a00;
     color: white;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -28,41 +26,39 @@
     text-align: center;
     padding: 15px;
 }
-
 /* Table rows styling */
 #coursesTable td {
     padding: 12px;
     text-align: left;
     font-size: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 /* Alternating row colors for better readability */
 #coursesTable tr:nth-child(even) {
-    background: rgba(255, 0, 0, 0.3);
+    background: #2a2a2a;
 }
-
 #coursesTable tr:nth-child(odd) {
-    background: rgba(70, 0, 0, 0.7);
+    background: #222222;
 }
-
 /* Hover effect for table rows */
 #coursesTable tr:hover {
-    background: rgba(160, 10, 10, 0.5);
+    background: #333333;
     transition: background 0.3s ease-in-out;
 }
-
+/* Orange accent for certain elements */
+#coursesTable td:first-child {
+    color: #ff6a00;
+    font-weight: bold;
+}
 /* Rounded corners on first and last column */
 #coursesTable th:first-child, #coursesTable td:first-child {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-
 #coursesTable th:last-child, #coursesTable td:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #coursesTable {
