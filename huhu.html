@@ -24,13 +24,13 @@
                 <th>Credit</th>
             </tr>
         </thead>
-        <tbody id="hehe.css"></tbody>
+        <tbody id="#tableContainer"></tbody>
     </table>
     <script>
         fetch('hoho.json')
             .then(response => response.json())
             .then(data => {
-                let tableBody = document.getElementById("hehe.css");
+                let tableBody = document.getElementById("#tableContainer");
                 data.courses.forEach(course => {
                     let row = `<tr>
                         <td>${course.year_level}</td>
