@@ -10,7 +10,7 @@
 #coursesTable {
     width: 85%;
     border-collapse: collapse;
-    background: #1a1a1a;
+    background: linear-gradient(135deg, #991b1b, #7f1d1d);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     color: white;
     border-radius: 10px;
@@ -20,7 +20,7 @@
 
 /* Table headers */
 #coursesTable th {
-    background: #ff6a00;
+    background: linear-gradient(135deg, #ff4d4d, #cc0000);
     color: white;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -34,28 +34,22 @@
     padding: 12px;
     text-align: left;
     font-size: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Alternating row colors for better readability */
 #coursesTable tr:nth-child(even) {
-    background: #2a2a2a;
+    background: rgba(255, 0, 0, 0.3);
 }
 
 #coursesTable tr:nth-child(odd) {
-    background: #222222;
+    background: rgba(70, 0, 0, 0.7);
 }
 
 /* Hover effect for table rows */
 #coursesTable tr:hover {
-    background: #333333;
+    background: rgba(160, 10, 10, 0.5);
     transition: background 0.3s ease-in-out;
-}
-
-/* Adding orange accents to first column or specific elements */
-#coursesTable td:first-child {
-    color: #ff6a00;
-    font-weight: bold;
 }
 
 /* Rounded corners on first and last column */
