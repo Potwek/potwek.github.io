@@ -1,9 +1,26 @@
-/* Centering the table container */
+/* Dark theme for the entire background */
+body {
+    background-color: #0d0d0d; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style heading */
+h2 {
+    color: #ff6a00; /* Orange color to match the table */
+    margin-top: 20px;
+}
+
+/* Center the table properly */
 #tableContainer {
-    width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
+    min-height: 100vh; /* Ensures table is centered in full view */
+    padding: 20px;
 }
 
 /* Styling the table */
