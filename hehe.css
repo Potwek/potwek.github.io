@@ -16,11 +16,10 @@ h2 {
 
 /* Search input styling to match dark theme */
 #searchContainer {
-    display: flex;
+    display: column;
     justify-content: top;
     align-items: center;
     width: 100%;
-    margin-bottom: 15px; /* Add spacing between search bar and table */
 }
 
 #searchInput {
