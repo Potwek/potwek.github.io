@@ -19,8 +19,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     width: 100%;
+    margin-bottom: 15px; /* Add spacing between search bar and table */
 }
 
 #searchInput {
