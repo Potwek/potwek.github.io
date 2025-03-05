@@ -14,12 +14,30 @@ h2 {
     margin-top: 20px;
 }
 
-/* Center the table properly */
+/* Search input styling to match dark theme */
+#searchInput {
+    width: 85%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+    border: 2px solid #ff6a00;
+    color: #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+#searchInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.5);
+}
+
+/* Adjust table container to accommodate search */
 #tableContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensures table is centered in full view */
+    min-height: 100vh;
     padding: 20px;
 }
 
