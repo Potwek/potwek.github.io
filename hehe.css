@@ -18,7 +18,7 @@ h2 {
 #tableContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* or flex-start if you want to align to the top */
+    justify-content: flex-start; /* or flex-start if you want to align to the top */
     align-items: center;
     width: 100%;
 }
