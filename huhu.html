@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,6 @@
 </head>
 <body>
     <h2>My Courses</h2>
-    <input type="text" id="searchInput" placeholder="Search courses by year, semester, code, description, or credit...">
     <div id="tableContainer">
         <table id="coursesTable">
             <thead>
@@ -30,29 +30,17 @@
             .then(data => {
                 let tableBody = document.getElementById("coursesTableBody");
                 data.courses.forEach(course => {
-                    let row = `<tr>
+                    let row = <tr>
                         <td>${course.year_level}</td>
                         <td>${course.sem}</td>
                         <td>${course.code}</td>
                         <td>${course.description}</td>
                         <td>${course.credit}</td>
-                    </tr>`;
+                    </tr>;
                     tableBody.innerHTML += row;
                 });
-            }
-                document.getElementById('searchInput').addEventListener('input', function() {
-                    const searchTerm = this.value.toLowerCase();
-    
-                    const filteredCourses = allCourses.filter(course => 
-                        course.year_level.toLowerCase().includes(searchTerm) ||
-                        course.sem.toLowerCase().includes(searchTerm) ||
-                        course.code.toLowerCase().includes(searchTerm) ||
-                        course.description.toLowerCase().includes(searchTerm) ||
-                        course.credit.toString().toLowerCase().includes(searchTerm)
-                    );
-
-                    populateTable(filteredCourses);
-                });
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
     </script>
 </body>
 </html>
