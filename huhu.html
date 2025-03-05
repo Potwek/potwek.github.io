@@ -39,8 +39,19 @@
                     </tr>`;
                     tableBody.innerHTML += row;
                 });
-            })
-            .catch(error => console.error('Error fetching JSON:', error));
-    </script>
-</body>
+            }
+                document.getElementById('searchInput').addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+    
+                    const filteredCourses = allCourses.filter(course => 
+                        course.year_level.toLowerCase().includes(searchTerm) ||
+                        course.sem.toLowerCase().includes(searchTerm) ||
+                        course.code.toLowerCase().includes(searchTerm) ||
+                        course.description.toLowerCase().includes(searchTerm) ||
+                        course.credit.toString().toLowerCase().includes(searchTerm)
+                    );
+
+                    populateTable(filteredCourses);
+                });
+        </body>
 </html>
