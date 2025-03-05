@@ -9,7 +9,10 @@
 </head>
 <body>
     <h2>My Courses</h2>
+    
     <div id="tableContainer">
+        <input type="text" id="searchInput" placeholder="Search courses by year, semester, code, description, or credit...">
+        
         <table id="coursesTable">
             <thead>
                 <tr>
@@ -23,23 +26,50 @@
             <tbody id="coursesTableBody"></tbody> 
         </table>
     </div>
+
     <script>
+        // Store original courses data
+        let allCourses = [];
+
+        // Fetch and populate initial table
         fetch('hoho.json')
             .then(response => response.json())
             .then(data => {
-                let tableBody = document.getElementById("coursesTableBody");
-                data.courses.forEach(course => {
-                    let row = <tr>
-                        <td>${course.year_level}</td>
-                        <td>${course.sem}</td>
-                        <td>${course.code}</td>
-                        <td>${course.description}</td>
-                        <td>${course.credit}</td>
-                    </tr>;
-                    tableBody.innerHTML += row;
-                });
+                allCourses = data.courses;
+                populateTable(allCourses);
             })
             .catch(error => console.error('Error fetching JSON:', error));
+
+        // Function to populate table
+        function populateTable(courses) {
+            let tableBody = document.getElementById("coursesTableBody");
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            courses.forEach(course => {
+                let row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${course.year_level}</td>
+                    <td>${course.sem}</td>
+                    <td>${course.code}</td>
+                    <td>${course.description}</td>
+                    <td>${course.credit}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            const filteredCourses = allCourses.filter(course => 
+                Object.values(course).some(value => 
+                    String(value).toLowerCase().includes(searchTerm)
+                )
+            );
+
+            populateTable(filteredCourses);
+        });
     </script>
 </body>
 </html>
