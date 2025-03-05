@@ -15,14 +15,6 @@ h2 {
 }
 
 /* Search input styling to match dark theme */
-#tableContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* or flex-start if you want to align to the top */
-    align-items: center;
-    width: 100%;
-}
-
 #searchInput {
     width: 85%;
     padding: 12px;
@@ -47,12 +39,13 @@ h2 {
     box-shadow: 0 0 10px rgba(255, 106, 0, 0.5);
 }
 
-/* Adjust table container */
 #tableContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start; /* or flex-start if you want to align to the top */
     align-items: center;
-    padding: 20px;
+    width: 100%;
+}
 
 /* Styling the table */
 #coursesTable {
