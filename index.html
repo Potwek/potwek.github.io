@@ -60,7 +60,6 @@
             color: #ff8533;
         }
 
-        /* Dropdown styles */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -92,7 +91,6 @@
             background-color: #444;
         }
 
-        /* Rest of the original styles */
         section {
             padding: 4rem 2rem;
             max-width: 1200px;
@@ -210,7 +208,6 @@
         </ul>
     </nav>
 
-    <!-- Rest of the original content remains the same -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <p>I am a passionate IT student with a focus on web development and software engineering. Currently pursuing my degree in Information Technology, I am constantly learning and exploring new technologies to expand my skill set.</p>
@@ -260,10 +257,10 @@
 
     <section id="contact">
         <h2 class="section-title">Contact Me</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea rows="5" placeholder="Message" required></textarea>
+        <form class="contact-form" action="https://formspree.io/f/xvgknplo" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" rows="5" placeholder="Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
